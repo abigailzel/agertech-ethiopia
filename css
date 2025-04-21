@@ -1,1 +1,99 @@
+/* ========== GLOBAL STYLES ========== */
 
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+h2 {
+  color: #2e7d32; /* Ethiopian green */
+  font-weight: 600;
+}
+
+/* ========== CARD STYLES ========== */
+
+.card {
+  border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card-title {
+  font-size: 1.25rem;
+  color: #2e7d32;
+}
+
+.card-text {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.product-img {
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.product-img:hover {
+  transform: scale(1.03);
+}
+
+/* ========== BUTTON STYLES ========== */
+
+.btn-primary {
+  background-color: #d32f2f; /* Ethiopian red */
+  border-color: #d32f2f;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: #b71c1c;
+  border-color: #b71c1c;
+}
+
+/* ========== FORM STYLES ========== */
+
+form input,
+form textarea,
+form select {
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+form button {
+  background-color: #f9a825; /* Ethiopian yellow */
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+form button:hover {
+  background-color: #f57f17;
+}
+
+/* ========== FOOTER STYLES ========== */
+
+footer {
+  background-color: #2e7d32;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
