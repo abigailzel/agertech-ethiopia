@@ -6,6 +6,7 @@ Feedback Questions:
 1.	Is the website accessible and user-friendly for the target audience?
 2.	Do the interactive features enhance the overall user experience?
 3.	Is the product information clear and comprehensive?
+
 Hypothesis:
 A responsive, interactive website with localized content will effectively engage Ethiopian farmers and promote the adoption of agricultural machinery.
 
