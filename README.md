@@ -1,4 +1,4 @@
-# agertech-ethiopia
+# Agertech-ethiopia
 Goal:
 AgerTech Ethiopia is committed to revolutionizing Ethiopian agriculture by providing affordable, durable, and efficient machinery. My goal is to enhance productivity, reduce labor strain, and empower local communities to achieve food security and economic growth.
 
