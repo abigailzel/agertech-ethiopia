@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Us | AgerTech Ethiopia</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Contact Us</h1>
+  </header>
+
+  <section style="padding: 20px;">
+    <form id="contact-form">
+      <label for="name"><i class="fa fa-user"></i> Your Name</label><br>
+      <input type="text" id="name" name="name" required><br><br>
+
+      <label for="email"><i class="fa fa-envelope"></i> Your Email</label><br>
+      <input type="email" id="email" name="email" required><br><br>
+
+      <label for="message"><i class="fa fa-comment"></i> Message</label><br>
+      <textarea id="message" name="message" rows="5" required></textarea><br><br>
+
+      <button type="submit">Submit</button>
+    </form>
+    <p id="confirmation" style="display:none; color:green; font-weight:bold;">
+      <i class="fa fa-check-circle"></i> Thank you! Your message has been submitted.
+    </p>
+  </section>
+
+  <script>
+    $("#contact-form").on("submit", function(e) {
+      e.preventDefault();
+      $("#confirmation").show();
+      $(this).trigger("reset");
+    });
+  </script>
+</body>
+</html>
