@@ -2,107 +2,137 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>AgerTech Ethiopia | Modern Farm Machinery</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgerTech Ethiopia | Modern Farm Machinery</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-
-<!-- Header Logo -->
-<header style="padding: 1rem; background-color: #2f7d32;">
-  <h1 style="margin: 0;">
-    <a href="index.html" style="color: white; text-decoration: none; font-size: 2rem;">
-      AgerTech Ethiopia 🌾
-    </a>
-  </h1>
-</header>
-
-<!-- Navigation -->
-<nav style="background-color: #1f5c23; padding: 1rem; text-align: center;">
-  <a href="index.html" style="color: white; margin: 0 15px; font-weight: bold; text-decoration: none;">🏠 Home</a>
-  <a href="products.html" style="color: white; margin: 0 15px; font-weight: bold; text-decoration: none;">🚜 Products</a>
-  <a href="submit.html" style="color: white; margin: 0 15px; font-weight: bold; text-decoration: none;">✉️ Contact</a>
-</nav>
-
-<!-- Hero Section -->
-<section style="text-align: center; padding: 60px 20px;">
-  <h2 style="font-size: 2.5rem;">Bringing the Farm to Technology</h2>
-  <p style="font-size: 1.1rem; max-width: 600px; margin: 20px auto;">
-    AgerTech Ethiopia empowers farmers with affordable, durable, and efficient machinery.
-    Explore our mini tractors, seeders, solar pumps, and more — built for real change.
-  </p>
-  <a href="products.html" class="button" style="padding: 10px 20px; background-color: #2f7d32; color: white; text-decoration: none; border-radius: 5px;">View Products</a>
-  <a href="submit.html" class="button" style="padding: 10px 20px; background-color: #444; color: white; text-decoration: none; border-radius: 5px; margin-left: 10px;">Contact Us</a>
-</section>
-
-<!-- Product Gallery -->
-<section style="padding: 40px; background-color: #f5f5f5;">
-  <h2 style="text-align:center; margin-bottom: 40px;">Our Top Farm Machines</h2>
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
-
-    <!-- Product 1 -->
-    <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
-      <img src="mini-tractor.jpg" alt="Mini Tractor" style="width: 100%; border-radius: 8px; margin-bottom: 10px;">
-      <h3>Mini Tractor</h3>
-      <p>Compact and powerful for small to mid-size farms.</p>
-      <strong>450,000 ETB</strong>
+  <!-- Header -->
+  <header class="py-3 bg-success text-white text-center">
+    <div class="container">
+      <h1 class="mb-0">AgerTech Ethiopia 🌾</h1>
     </div>
+  </header>
 
-    <!-- Product 2 -->
-    <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
-      <img src="seeder.jpg" alt="Two-Row Seeder" style="width: 100%; border-radius: 8px; margin-bottom: 10px;">
-      <h3>Two-Row Seeder</h3>
-      <p>Efficiently plants seeds with minimal labor.</p>
-      <strong>80,000 ETB</strong>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Home</a>
+      <a class="nav-link text-white" href="products.html">🚜 Products</a>
+      <a class="nav-link text-white" href="submit.html">✉️ Contact</a>
     </div>
+  </nav>
 
-    <!-- Product 3 -->
-    <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
-      <img src="plow.jpg" alt="Motorized Plow" style="width: 100%; border-radius: 8px; margin-bottom: 10px;">
-      <h3>Motorized Plow</h3>
-      <p>Modern replacement for oxen-based plowing.</p>
-      <strong>120,000 ETB</strong>
+  <!-- Hero Section -->
+  <section class="py-5 text-center">
+    <div class="container">
+      <h2 class="display-5">Bringing the Farm to Technology</h2>
+      <p class="lead">AgerTech Ethiopia empowers farmers with affordable, durable, and efficient machinery. Explore our mini tractors, seeders, solar pumps, and more — built for real change.</p>
+      <a href="products.html" class="btn btn-success m-2">View Products</a>
+      <a href="submit.html" class="btn btn-outline-dark m-2">Contact Us</a>
     </div>
+  </section>
 
-    <!-- Product 4 -->
-    <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
-      <img src="pump.jpg" alt="Solar Water Pump" style="width: 100%; border-radius: 8px; margin-bottom: 10px;">
-      <h3>Solar Water Pump</h3>
-      <p>Clean, sustainable irrigation option.</p>
-      <strong>90,000 ETB</strong>
+  <!-- Product Grid -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">Our Top Farm Machines</h2>
+      <div class="row">
+
+        <!-- Mini Tractor -->
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100">
+            <img src="mini-tractor.jpg" class="card-img-top" alt="Mini Tractor">
+            <div class="card-body">
+              <h5 class="card-title">Mini Tractor – መነሻ ትራክተር</h5>
+              <p class="card-text">A compact machine for small farms. <br><em>ትንሽ መሬቶች ላይ ለስራ የሚሆን።</em></p>
+              <strong>450,000 ETB</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Seeder -->
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100">
+            <img src="seeder.jpg" class="card-img-top" alt="Seeder">
+            <div class="card-body">
+              <h5 class="card-title">Two-Row Seeder – የእርሻ በለው መዘሪያ</h5>
+              <p class="card-text">Plants seeds evenly in rows. <br><em>ዘር በተመጣጣኝ ሁኔታ ይዘራል።</em></p>
+              <strong>80,000 ETB</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Plow -->
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100">
+            <img src="plow.jpg" class="card-img-top" alt="Plow">
+            <div class="card-body">
+              <h5 class="card-title">Motorized Plow – የሞተር መቀነት</h5>
+              <p class="card-text">Replaces oxen for tilling. <br><em>በበሬ ፋንታ የሚሰራ።</em></p>
+              <strong>120,000 ETB</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pump -->
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100">
+            <img src="pump.jpg" class="card-img-top" alt="Pump">
+            <div class="card-body">
+              <h5 class="card-title">Solar Water Pump – የፀሐይ ፓምፕ</h5>
+              <p class="card-text">Irrigates crops using sunlight. <br><em>በፀሐይ ኃይል የሚሰራ።</em></p>
+              <strong>90,000 ETB</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Thresher -->
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100">
+            <img src="thresher.jpg" class="card-img-top" alt="Thresher">
+            <div class="card-body">
+              <h5 class="card-title">Grain Thresher – የእህል መሰባበሪያ</h5>
+              <p class="card-text">Separates grain from husk. <br><em>እህልን ከብረት ይለያል።</em></p>
+              <strong>130,000 ETB</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sprayer -->
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100">
+            <img src="sprayer.jpg" class="card-img-top" alt="Sprayer">
+            <div class="card-body">
+              <h5 class="card-title">Crop Sprayer – የእርሻ ፕራየር</h5>
+              <p class="card-text">Sprays fertilizers or pesticides. <br><em>የነፍሳት መሰረዣ ይሰጣል።</em></p>
+              <strong>25,000 ETB</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Storage -->
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100">
+            <img src="storage.jpg" class="card-img-top" alt="Storage Unit">
+            <div class="card-body">
+              <h5 class="card-title">Storage Unit – የምርት መያዣ</h5>
+              <p class="card-text">Stores crops post-harvest. <br><em>ምርቶችን ከመከር በኋላ ይጠብቃል።</em></p>
+              <strong>250,000 ETB</strong>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
+  </section>
 
-    <!-- Product 5 -->
-    <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
-      <img src="thresher.jpg" alt="Grain Thresher" style="width: 100%; border-radius: 8px; margin-bottom: 10px;">
-      <h3>Grain Thresher</h3>
-      <p>Separates grain efficiently and reduces manual labor.</p>
-      <strong>130,000 ETB</strong>
-    </div>
-
-    <!-- Product 6 -->
-    <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
-      <img src="sprayer.jpg" alt="Crop Sprayer" style="width: 100%; border-radius: 8px; margin-bottom: 10px;">
-      <h3>Crop Sprayer</h3>
-      <p>Handheld or mounted versions for pest control.</p>
-      <strong>25,000 ETB</strong>
-    </div>
-
-    <!-- Product 7 -->
-    <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
-      <img src="storage.jpg" alt="Post-Harvest Storage" style="width: 100%; border-radius: 8px; margin-bottom: 10px;">
-      <h3>Storage Unit</h3>
-      <p>Solar-cooled units for post-harvest crop storage.</p>
-      <strong>250,000 ETB</strong>
-    </div>
-
-  </div>
-</section>
-
-<!-- Footer -->
-<footer style="text-align: center; padding: 20px; background-color: #2f7d32; color: white;">
-  <p>&copy; 2025 AgerTech Ethiopia. All rights reserved.</p>
-</footer>
+  <!-- Footer -->
+  <footer class="bg-success text-white text-center py-3">
+    <p class="mb-0">&copy; 2025 AgerTech Ethiopia. All rights reserved.</p>
+  </footer>
 
 </body>
 </html>
