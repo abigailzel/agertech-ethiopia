@@ -2,62 +2,47 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us | AgerTech Ethiopia</title>
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-  <header>
-    <h1>Contact Us</h1>
-  </header>
 
-  <section style="padding: 20px;">
+<header class="header">
+  <div class="container">
+    <h1>AgerTech Ethiopia 🌾</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="submit.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="contact">
+  <div class="container">
+    <h2>Contact Us</h2>
     <form id="contact-form">
-      <label for="name"><i class="fa fa-user"></i> Your Name</label><br>
-      <input type="text" id="name" name="name" required><br><br>
-
-      <label for="email"><i class="fa fa-envelope"></i> Your Email</label><br>
-      <input type="email" id="email" name="email" required><br><br>
-
-      <label for="message"><i class="fa fa-comment"></i> Message</label><br>
-      <textarea id="message" name="message" rows="5" required></textarea><br><br>
-
-      <button type="submit">Submit</button>
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit" class="btn">Submit</button>
     </form>
-    <p id="confirmation" style="display:none; color:green; font-weight:bold;">
-      <i class="fa fa-check-circle"></i> Thank you! Your message has been submitted.
-    </p>
-  </section>
+    <p id="confirmation" style="display:none; margin-top:1rem; color:green;">Thank you! Your message has been received.</p>
+  </div>
+</section>
 
-  <script>
-    $("#contact-form").on("submit", function(e) {
-      e.preventDefault();
-      $("#confirmation").show();
-      $(this).trigger("reset");
-    });
-  </script>
-<body>
-  <nav style="background-color: #2f7d32; padding: 1rem;">
-    <a href="index.html" style="color: white; margin-right: 20px; font-weight: bold; text-decoration: none;">
-      🏠 Home
-    </a>
-    <a href="products.html" style="color: white; margin-right: 20px; font-weight: bold; text-decoration: none;">
-      🚜 Products
-    </a>
-    <a href="submit.html" style="color: white; font-weight: bold; text-decoration: none;">
-      ✉️ Contact
-    </a>
-  </nav>
+<footer>
+  <p>&copy; 2025 AgerTech Ethiopia. All Rights Reserved.</p>
+</footer>
 
-  <header>
-    <h1>Our Products</h1>
-  </header>
+<script>
+  document.getElementById('contact-form').addEventListener('submit', function(event){
+    event.preventDefault();
+    document.getElementById('confirmation').style.display = 'block';
+    this.reset();
+  });
+</script>
 
-  <section id="product-list">
-    <!-- Products will load here from JSON -->
-  </section>
-
-  <script src="js/products.js"></script>
 </body>
 </html>
