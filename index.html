@@ -1,158 +1,316 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgerTech Ethiopia</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>AgerTech Ethiopia</title>
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+	<!-- Font Awesome -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-
-    <!-- Custom Styles -->
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-        }
-        .hover-effect:hover {
-            transform: scale(1.05);
-            transition: 0.3s ease;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-        }
-        header {
-            background: url('assets/images/welcome-hero/farm-hero.jpg') no-repeat center center/cover;
-            height: 100vh;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-        header h1 {
-            font-size: 3rem;
-            font-weight: bold;
-        }
-        header p {
-            font-size: 1.2rem;
-            margin-top: 1rem;
-        }
-        footer {
-            background-color: #2e7d32;
-            color: white;
-        }
-    </style>
+	<style>
+		body { font-family: 'Poppins', sans-serif; margin: 0; padding-top: 70px; }
+		header {
+			background: url('assets/images/farm-hero.jpg') center/cover no-repeat;
+			padding: 250px 0;
+			text-align: center;
+			color: white;
+			position: relative;
+		}
+		.hover-effect:hover {
+			transform: scale(1.05);
+			transition: 0.3s;
+			box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+			cursor: pointer;
+		}
+		.card img { height: 200px; object-fit: cover; }
+		#aboutSection { background: #f1f1f1; padding: 60px 0; }
+		#cartSection { background: #f8f9fa; padding: 40px 0; }
+		#cartTableContainer img { width: 50px; height: 50px; object-fit: cover; }
+	</style>
 </head>
-
 <body>
 
-    <!-- Hero Section -->
-    <header>
-        <h1>Bringing the Farm to Technology</h1>
-        <p>AgerTech Ethiopia empowers farmers with affordable, durable, and efficient machinery.</p>
-        <a href="#products" class="btn btn-light mt-4">View Products</a>
-    </header>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+	<div class="container-fluid">
+		<a class="navbar-brand" href="#">AgerTech</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav ms-auto">
+				<li class="nav-item"><a class="nav-link active" href="#homeSection">Home</a></li>
+				<li class="nav-item"><a class="nav-link" href="#productsSection">Products</a></li>
+				<li class="nav-item"><a class="nav-link" href="#aboutSection">About Us</a></li>
+				<li class="nav-item"><a class="nav-link" href="#cartSection">Cart</a></li>
+				<li class="nav-item"><a class="nav-link" href="#contactSection">Contact</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
 
-    <!-- Language Buttons -->
-    <div class="text-center my-5">
-        <button class="btn btn-success me-2" onclick="switchLanguage('english')">English</button>
-        <button class="btn btn-warning" onclick="switchLanguage('amharic')">አማርኛ</button>
-    </div>
+<!-- Hero / Header -->
+<header id="homeSection">
+	<h1 id="site-title">AgerTech Ethiopia 🌾</h1>
+	<p id="site-tagline">Bringing the Farm to Technology</p>
+	<div class="mt-3">
+		<button class="btn btn-light me-2" onclick="switchLanguage('english')">English</button>
+		<button class="btn btn-success" onclick="switchLanguage('amharic')">አማርኛ</button>
+	</div>
+</header>
 
-    <!-- Products Section -->
-    <section id="products" class="container mb-5">
-        <h2 class="text-center mb-4" id="product-section-title" data-english="Our Products" data-amharic="የእርሻ መሳሪያዎቻችን">Our Products</h2>
-        <div class="row">
+<!-- Products -->
+<section id="productsSection" class="container py-5">
+	<h2 id="products-title" class="text-center mb-4">Our Products</h2>
+	<div id="productCards" class="row g-4"></div>
+</section>
 
-            <!-- Mini Tractor -->
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 shadow-sm hover-effect text-center">
-                    <div class="card-body">
-                        <i class="fas fa-tractor fa-3x mb-3"></i>
-                        <h5 class="card-title" data-english="Mini Tractor" data-amharic="መነሻ ትራክተር">Mini Tractor</h5>
-                        <p class="card-text" data-english="Compact and powerful, ideal for small to mid-size farms." data-amharic="ትንሽ እና መካከለኛ መሬቶች ላይ ለማቀናበር ተገቢ እና ኃይለኛ።">Compact and powerful, ideal for small to mid-size farms.</p>
-                        <p><strong>450,000 ETB</strong></p>
-                        <button class="btn btn-success" onclick="alert('Mini Tractor added to cart!')">Order Now</button>
-                    </div>
-                </div>
+<!-- About Us -->
+<section id="aboutSection">
+	<div class="container">
+		<h2 id="about-title" class="text-center mb-4">About Us</h2>
+		<p id="about-desc" class="lead text-center">
+			AgerTech Ethiopia is dedicated to transforming Ethiopian agriculture by providing modern, affordable farm machinery to replace manual animal and human labor, boosting productivity and livelihoods across the countryside.
+		</p>
+	</div>
+</section>
+
+<!-- Cart -->
+<section id="cartSection">
+	<div class="container">
+		<h2 id="cart-title" class="text-center mb-4">Shopping Cart</h2>
+		<div id="cartTableContainer" class="table-responsive">
+			<table class="table table-bordered">
+				<thead>
+				<tr>
+					<th id="th-img">Image</th>
+					<th id="th-product">Product</th>
+					<th id="th-qty">Qty</th>
+					<th id="th-price">Price (ETB)</th>
+					<th id="th-sub">Subtotal</th>
+				</tr>
+				</thead>
+				<tbody id="cartBody"></tbody>
+				<tfoot>
+				<tr><td colspan="4" class="text-end" id="label-total">Total:</td><td id="cartSubtotal">0</td></tr>
+				<tr><td colspan="4" class="text-end" id="label-tax">Tax (15%):</td><td id="cartTax">0</td></tr>
+				<tr><td colspan="4" class="text-end" id="label-grand">Grand Total:</td><td id="cartGrand">0</td></tr>
+				</tfoot>
+			</table>
+		</div>
+		<div class="text-center mt-3">
+			<button class="btn btn-primary" onclick="scrollToOrder()" id="checkoutBtn">Checkout</button>
+		</div>
+	</div>
+</section>
+
+<!-- Order Form -->
+<section id="contactSection" class="container py-5">
+	<h2 id="contact-title" class="text-center mb-4">Order Form</h2>
+	<div class="row justify-content-center">
+		<div class="col-md-6">
+			<form id="orderForm" class="bg-white p-4 rounded text-dark">
+				<div class="mb-3"><label id="firstNameLabel">First Name</label><input type="text" class="form-control" required></div>
+				<div class="mb-3"><label id="lastNameLabel">Last Name</label><input type="text" class="form-control" required></div>
+				<div class="mb-3"><label id="emailLabel">Email</label><input type="email" class="form-control" required></div>
+				<div class="mb-3"><label id="phoneLabel">Phone</label><input type="tel" class="form-control" required></div>
+				<div class="mb-3"><label id="addressLabel">Address</label><input type="text" class="form-control" required></div>
+				<div class="mb-3"><label id="quantityLabel">Quantity (1-10)</label><input type="number" min="1" max="10" class="form-control" required></div>
+				<div class="mb-3"><label id="cardNumberLabel">Card Number</label><input type="text" class="form-control" placeholder="xxxx-xxxx-xxxx-xxxx" required></div>
+				<div class="mb-3"><label id="expiryDateLabel">Expiry Date</label><input type="text" class="form-control" placeholder="MM/YY" required></div>
+				<div class="mb-3"><label id="cvvLabel">CVV</label><input type="text" class="form-control" placeholder="123" required></div>
+				<button type="submit" class="btn btn-success w-100" id="submitButton">Submit Order</button>
+			</form>
+		</div>
+	</div>
+</section>
+
+<!-- Product Detail Modal -->
+<div class="modal fade" id="productModal" tabindex="-1">
+	<div class="modal-dialog modal-fullscreen">
+		<div class="modal-content text-white bg-dark">
+			<div class="modal-header bg-opacity-50">
+				<h5 class="modal-title" id="productDetailTitle"></h5>
+				<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+			</div>
+			<div class="modal-body bg-opacity-50" id="productDetailDesc"></div>
+			<div class="modal-footer bg-opacity-50">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer class="bg-dark text-white text-center py-4">
+	<p>&copy; 2025 AgerTech Ethiopia. All rights reserved.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+	const TAX_RATE = 0.15;
+	const products = [
+		{name:'Tractor',nameAm:'ትራክተር',image:'assets/images/tractor.jpeg',price:15000,
+			desc:'Heavy-duty 3m×1.5m×2m vehicle for plowing, tilling, hauling.',
+			descAm:'3×1.5×2ሜ ኃይለኛ መሣሪያ ለመቀነት፣ ለመንቀሳቀስ፣ ለታጠት።'},
+		{name:'Plow',nameAm:'መቀነት',image:'assets/images/plow.jpeg',price:1200,
+			desc:'1.2m wide blade to cut & turn soil up to 0.3m deep.',
+			descAm:'1.2ሜ ስፋት 0.3ሜ ጥለት ብረት ብልት.'},
+		{name:'Seeder',nameAm:'ዘር መዘሪያ',image:'assets/images/seeder.jpeg',price:900,
+			desc:'5kg hopper sows seeds at 20–40cm row spacing.',
+			descAm:'5ኪ.ግ ማቀላቀል 20–40ሲ.ሜ ማስተካከያ.'},
+		{name:'Sprayer',nameAm:'መድፍ',image:'assets/images/sprayer.jpeg',price:700,
+			desc:'15L handheld or 200L tractor unit for pesticides/fertilizers.',
+			descAm:'15ሊትር እጅ ወይም 200ሊትር ለመድፍ/ፈርቲላይዘር.'},
+		{name:'Cultivator',nameAm:'አሰሪ',image:'assets/images/cultivator.jpeg',price:1300,
+			desc:'1.5m wide, 7-tine tool for soil aeration between rows.',
+			descAm:'1.5ሜ 7 ጠንታዎች መሣሪያ ወደ መሬት አየር መጥበቅ.'},
+		{name:'Harvester',nameAm:'ሀርቨስተር',image:'assets/images/harvester.jpeg',price:20000,
+			desc:'120hp combine cuts, threshes & cleans; 4m header, 4t tank.',
+			descAm:'120 ሒ.ፒ ኮምባይን 4ሜ ራስ፣ 4ቶን tank.'},
+		{name:'Baler',nameAm:'ባሌር',image:'assets/images/baler.jpeg',price:5000,
+			desc:'Compresses crops into 0.5×0.5×1.2m bales (~25kg) via PTO.',
+			descAm:'0.5×0.5×1.2ሜ bales(~25ኪ.ግ) via PTO.'},
+		{name:'Wagon',nameAm:'ዋጎን',image:'assets/images/machinewagon.jpeg',price:3500,
+			desc:'3×1.5m steel trailer carrying up to 3t.',
+			descAm:'3×1.5ሜ steel trailer 3ቶን.'},
+		{name:'Loader',nameAm:'ለዶር',image:'assets/images/loadertractor.jpeg',price:10000,
+			desc:'Front bucket lifts and moves materials.',
+			descAm:'ፊት bucket lifts & moves.'},
+		{name:'Farm Truck',nameAm:'የእርሻ ትራክ',image:'assets/images/farmtruck.jpeg',price:25000,
+			desc:'2×1.8m bed carries produce & equipment.',
+			descAm:'2×1.8ሜ bed carries produce.'},
+		{name:'Backhoe',nameAm:'ባክሆ',image:'assets/images/backhoe.jpeg',price:22000,
+			desc:'Rear excavator arm digs trenches & lifts loads.',
+			descAm:'Rear arm digs & lifts.'},
+		{name:'Cotton Picker',nameAm:'የእንጨት ሰባት',image:'assets/images/cottonpicker.jpeg',price:17000,
+			desc:'Harvests cotton at 2t/hr capacity.',
+			descAm:'2ቶን/ሰ cotton.'},
+
+	];
+
+	// Display product cards
+	function displayProducts(lang='english') {
+		let html = '';
+		products.forEach((p,i) => {
+			html += `
+          <div class="col-md-4">
+            <div class="card hover-effect h-100" onclick="showDetail(${i},'${lang}')">
+              <img src="${p.image}" class="card-img-top" alt="">
+              <div class="card-body text-center">
+                <h5 class="card-title">${lang==='english'?p.name:p.nameAm}</h5>
+                <p class="card-text">${lang==='english'?p.desc:p.descAm}</p>
+                <p><strong>${p.price} ETB</strong></p>
+                <button class="btn btn-success" onclick="addToCart(${i},'${lang}');event.stopPropagation();">
+                  ${lang==='english'?'Add to Cart':'ወደ ጋራው ጨምር'}
+                </button>
+              </div>
             </div>
+          </div>`;
+		});
+		document.getElementById('productCards').innerHTML = html;
+	}
 
-            <!-- Two-Row Seeder -->
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 shadow-sm hover-effect text-center">
-                    <div class="card-body">
-                        <i class="fas fa-seedling fa-3x mb-3"></i>
-                        <h5 class="card-title" data-english="Two-Row Seeder" data-amharic="የእርሻ በለው መዘሪያ">Two-Row Seeder</h5>
-                        <p class="card-text" data-english="Plants seeds evenly, saving time and labor." data-amharic="ያማርኛ ተዘርዝሯል።">Plants seeds evenly, saving time and labor.</p>
-                        <p><strong>80,000 ETB</strong></p>
-                        <button class="btn btn-success" onclick="alert('Two-Row Seeder added to cart!')">Order Now</button>
-                    </div>
-                </div>
-            </div>
+	// Cart logic
+	let cart = [];
+	function addToCart(index,lang) {
+		const ex = cart.find(c=>c.index===index);
+		if(ex) ex.qty=Math.min(10,ex.qty+1);
+		else cart.push({index,qty:1});
+		renderCart(lang);
+	}
+	function renderCart(lang='english') {
+		const tbody = document.getElementById('cartBody');
+		tbody.innerHTML = '';
+		let subtotal = 0;
+		cart.forEach(item => {
+			const p = products[item.index], line=p.price*item.qty;
+			subtotal += line;
+			tbody.innerHTML += `
+          <tr>
+            <td><img src="${p.image}"/></td>
+            <td>${lang==='english'?p.name:p.nameAm}</td>
+            <td>${item.qty}</td>
+            <td>${p.price}</td>
+            <td>${line}</td>
+          </tr>`;
+		});
+		const tax = Math.round(subtotal * TAX_RATE), grand=subtotal+tax;
+		document.getElementById('cartSubtotal').innerText = subtotal;
+		document.getElementById('cartTax').innerText = tax;
+		document.getElementById('cartGrand').innerText = grand;
+	}
 
-            <!-- Motorized Plow -->
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 shadow-sm hover-effect text-center">
-                    <div class="card-body">
-                        <i class="fas fa-shovel fa-3x mb-3"></i>
-                        <h5 class="card-title" data-english="Motorized Plow" data-amharic="የሞተር መቀነት መሳሪያ">Motorized Plow</h5>
-                        <p class="card-text" data-english="Fast and deep soil preparation without oxen." data-amharic="የተሟላ የመሬት ስራ እና ቀላል ስራ ነው።">Fast and deep soil preparation without oxen.</p>
-                        <p><strong>120,000 ETB</strong></p>
-                        <button class="btn btn-success" onclick="alert('Motorized Plow added to cart!')">Order Now</button>
-                    </div>
-                </div>
-            </div>
+	function scrollToOrder(){document.getElementById('contactSection').scrollIntoView({behavior:'smooth'});}
 
-        </div>
-    </section>
+	// Product detail modal
+	function showDetail(i,lang='english') {
+		const p=products[i];
+		document.getElementById('productDetailTitle').innerText = lang==='english'?p.name:p.nameAm;
+		document.getElementById('productModal').querySelector('.modal-content').style.backgroundImage=`url(${p.image})`;
+		document.getElementById('productDetailDesc').innerHTML = `<p>${lang==='english'?p.desc:p.descAm}</p>
+        <ul><li>Size: <strong>${lang==='english'?'Varies by model':'ይልዋ ሞዴል ላይ ይለዋል'}</strong></li>
+              <li>Weight: <strong>${lang==='english'?'Varies':'ይልዋ'}</strong></li></ul>`;
+		new bootstrap.Modal(document.getElementById('productModal')).show();
+	}
 
-    <!-- Order Form Section -->
-    <section class="container mb-5">
-        <h2 class="text-center mb-4" id="order-form-title" data-english="Submit an Order" data-amharic="ትዕዛዝ ያቅርቡ">Submit an Order</h2>
-        <form id="orderForm" class="w-75 mx-auto">
-            <div class="mb-3">
-                <input type="text" class="form-control" placeholder="Your Full Name" required>
-            </div>
-            <div class="mb-3">
-                <input type="email" class="form-control" placeholder="Your Email" required>
-            </div>
-            <div class="mb-3">
-                <input type="tel" class="form-control" placeholder="Your Phone Number" required>
-            </div>
-            <div class="mb-3">
-                <select class="form-select" required>
-                    <option value="">Select a Product</option>
-                    <option>Mini Tractor</option>
-                    <option>Two-Row Seeder</option>
-                    <option>Motorized Plow</option>
-                </select>
-            </div>
-            <button type="submit" class="btn btn-primary w-100">Submit Order</button>
-        </form>
-    </section>
+	// Language switch
+	function switchLanguage(lang) {
+		if(lang==='amharic') {
+			document.getElementById('site-title').innerText = 'አገርቴክ ኢትዮጵያ';
+			document.getElementById('site-tagline').innerText = 'ግብርናን ለቴክኖሎጂ ማምጣት';
+			document.getElementById('products-title').innerText = 'የእርሻ መሣሪያዎቻችን';
+			document.getElementById('about-title').innerText = 'ስለ እኛ';
+			document.getElementById('about-desc').innerText = 'አገርቴክ ኢትዮጵያ በመዘር፣ በመቀነት እና በማስታንቀሳቀስ መሣሪያዎች በመስጠት በሜዳ ላይ ያሉ ግልጽ ችግሮችን የሚፈትን በኢትዮጵያ ግብርና ላይ ዝንባሌ ለማድረግ ዋጋ የማይፈጥር፣ ውጤታማ መሣሪያዎችን ያቀርባል.';        document.getElementById('cart-title').innerText = 'የጋራ ዝርዝር';
+			document.getElementById('th-img').innerText='ምስል'; document.getElementById('th-product').innerText='ምርት'; document.getElementById('th-qty').innerText='ብዛት';
+			document.getElementById('th-price').innerText='ዋጋ(ETB)'; document.getElementById('th-sub').innerText='ድምር';
+			document.getElementById('label-total').innerText='ድምር:'; document.getElementById('label-tax').innerText='ግብር(15%):'; document.getElementById('label-grand').innerText='አጠቃላይ:';
+			document.getElementById('contact-title').innerText='ትዕዛዝ ቅጽ';
+			document.getElementById('firstNameLabel').innerText='ስም'; document.getElementById('lastNameLabel').innerText='የአባት ስም';
+			document.getElementById('emailLabel').innerText='ኢሜይል'; document.getElementById('phoneLabel').innerText='ስልክ';
+			document.getElementById('addressLabel').innerText='አድራሻ'; document.getElementById('quantityLabel').innerText='ብዛት (1-10)';
+			document.getElementById('cardNumberLabel').innerText='የካርድ ቁጥር'; document.getElementById('expiryDateLabel').innerText='የጊዜ አብቃት';
+			document.getElementById('cvvLabel').innerText='CVV'; document.getElementById('submitButton').innerText='ትዕዛዝ ላክ';
+			displayProducts('amharic'); renderCart('amharic');
+		} else {
+			document.getElementById('site-title').innerText='AgerTech Ethiopia 🌾';
+			document.getElementById('site-tagline').innerText='Bringing the Farm to Technology';
+			document.getElementById('products-title').innerText='Our Products';
+			document.getElementById('about-title').innerText='About Us';
+			document.getElementById('about-desc').innerText='AgerTech Ethiopia is dedicated to transforming Ethiopian agriculture by providing modern, affordable farm machinery to replace manual animal and human labor, boosting productivity and livelihoods across the countryside.';
+			document.getElementById('cart-title').innerText='Shopping Cart';
+			document.getElementById('th-img').innerText='Image';
+			document.getElementById('th-product').innerText='Product';
+			document.getElementById('th-qty').innerText='Qty';
+			document.getElementById('th-price').innerText='Price (ETB)';
+			document.getElementById('th-sub').innerText='Subtotal';
+			document.getElementById('label-total').innerText='Total:';
+			document.getElementById('label-tax').innerText='Tax (15%):';
+			document.getElementById('label-grand').innerText='Grand Total:';
+			document.getElementById('contact-title').innerText='Order Form';
+			document.getElementById('firstNameLabel').innerText='First Name';
+			document.getElementById('lastNameLabel').innerText='Last Name';
+			document.getElementById('emailLabel').innerText='Email';
+			document.getElementById('phoneLabel').innerText='Phone';
+			document.getElementById('addressLabel').innerText='Address';
+			document.getElementById('quantityLabel').innerText='Quantity (1-10)';
+			document.getElementById('cardNumberLabel').innerText='Card Number';
+			document.getElementById('expiryDateLabel').innerText='Expiry Date';
+			document.getElementById('cvvLabel').innerText='CVV';
+			document.getElementById('submitButton').innerText='Submit Order';
+			displayProducts('english'); renderCart('english');
+		}
+	}
 
-    <!-- Footer -->
-    <footer class="text-center py-4">
-        <p>&copy; 2025 AgerTech Ethiopia - All Rights Reserved</p>
-    </footer>
+	document.getElementById('orderForm').addEventListener('submit', e => {
+		e.preventDefault();
+		alert('Order placed successfully!');
+	});
 
-    <!-- Scripts -->
-    <script>
-        function switchLanguage(lang) {
-            const items = document.querySelectorAll('[data-english]');
-            items.forEach(element => {
-                element.innerText = element.getAttribute('data-' + lang);
-            });
-        }
-
-        document.getElementById('orderForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            alert('Thank you! Your order has been received.');
-        });
-    </script>
-
+	// Initialize
+	switchLanguage('english');
+</script>
 </body>
-
 </html>
