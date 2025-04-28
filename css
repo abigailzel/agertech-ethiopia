@@ -1,99 +1,93 @@
-/* ========== GLOBAL STYLES ========== */
-
 body {
-  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
   background-color: #f9f9f9;
   color: #333;
 }
 
-h2 {
-  color: #2e7d32; /* Ethiopian green */
-  font-weight: 600;
+.container {
+  width: 90%;
+  margin: auto;
+  overflow: hidden;
 }
 
-/* ========== CARD STYLES ========== */
-
-.card {
-  border: none;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background-color: #ffffff;
-  border-radius: 10px;
+.header {
+  background: #28a745;
+  color: white;
+  padding: 1rem 0;
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+nav a {
+  color: white;
+  margin: 0 1rem;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-.card-title {
-  font-size: 1.25rem;
-  color: #2e7d32;
+.hero {
+  background-image: url('https://www.deere.com/assets/images/region-4/industries/agriculture/r4k023953_rrd-tech-1024x576.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.card-text {
-  font-size: 0.95rem;
-  color: #555;
+.hero-text {
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
 }
 
-.product-img {
+.btn {
+  display: inline-block;
+  background: #ffc107;
+  color: #333;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 1rem;
+}
+
+.products .product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.product-card {
+  background: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+}
+
+.product-card img {
+  width: 100%;
   height: 200px;
   object-fit: cover;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  transition: transform 0.3s ease;
+  margin-bottom: 15px;
 }
 
-.product-img:hover {
-  transform: scale(1.03);
-}
-
-/* ========== BUTTON STYLES ========== */
-
-.btn-primary {
-  background-color: #d32f2f; /* Ethiopian red */
-  border-color: #d32f2f;
-  font-weight: bold;
-  transition: background-color 0.2s ease;
-}
-
-.btn-primary:hover {
-  background-color: #b71c1c;
-  border-color: #b71c1c;
-}
-
-/* ========== FORM STYLES ========== */
-
-form input,
-form textarea,
-form select {
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  padding: 10px;
+.contact input, .contact textarea {
   width: 100%;
-  margin-bottom: 1rem;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
-
-form button {
-  background-color: #f9a825; /* Ethiopian yellow */
-  color: white;
-  font-weight: bold;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 8px;
-  transition: background-color 0.3s;
-}
-
-form button:hover {
-  background-color: #f57f17;
-}
-
-/* ========== FOOTER STYLES ========== */
 
 footer {
-  background-color: #2e7d32;
-  color: white;
   text-align: center;
   padding: 1rem;
+  background: #28a745;
+  color: white;
   margin-top: 2rem;
-  font-size: 0.9rem;
 }
