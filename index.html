@@ -1,43 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AgerTech Ethiopia | Home</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgerTech Ethiopia</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .hover-effect:hover {
+            transform: scale(1.05);
+            transition: 0.3s ease;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+        header {
+            background: url('assets/images/welcome-hero/farm-hero.jpg') no-repeat center center/cover;
+            height: 100vh;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+        header p {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+        }
+        footer {
+            background-color: #2e7d32;
+            color: white;
+        }
+    </style>
 </head>
+
 <body>
 
-<header class="header">
-  <div class="container">
-    <h1>AgerTech Ethiopia 🌾</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="products.html">Products</a>
-      <a href="submit.html">Contact</a>
-    </nav>
-  </div>
-</header>
+    <!-- Hero Section -->
+    <header>
+        <h1>Bringing the Farm to Technology</h1>
+        <p>AgerTech Ethiopia empowers farmers with affordable, durable, and efficient machinery.</p>
+        <a href="#products" class="btn btn-light mt-4">View Products</a>
+    </header>
 
-<section class="hero">
-  <div class="hero-text">
-    <h2>Bringing the Farm to Technology</h2>
-    <p>Empowering Ethiopian farmers with affordable, durable, efficient machinery.</p>
-    <a href="products.html" class="btn">Explore Products</a>
-  </div>
-</section>
+    <!-- Language Buttons -->
+    <div class="text-center my-5">
+        <button class="btn btn-success me-2" onclick="switchLanguage('english')">English</button>
+        <button class="btn btn-warning" onclick="switchLanguage('amharic')">አማርኛ</button>
+    </div>
 
-<section class="intro">
-  <div class="container">
-    <h2>Our Mission</h2>
-    <p>To modernize agriculture with accessible technology — enhancing food security and community growth.</p>
-  </div>
-</section>
+    <!-- Products Section -->
+    <section id="products" class="container mb-5">
+        <h2 class="text-center mb-4" id="product-section-title" data-english="Our Products" data-amharic="የእርሻ መሳሪያዎቻችን">Our Products</h2>
+        <div class="row">
 
-<footer>
-  <p>&copy; 2025 AgerTech Ethiopia. All Rights Reserved.</p>
-</footer>
+            <!-- Mini Tractor -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm hover-effect text-center">
+                    <div class="card-body">
+                        <i class="fas fa-tractor fa-3x mb-3"></i>
+                        <h5 class="card-title" data-english="Mini Tractor" data-amharic="መነሻ ትራክተር">Mini Tractor</h5>
+                        <p class="card-text" data-english="Compact and powerful, ideal for small to mid-size farms." data-amharic="ትንሽ እና መካከለኛ መሬቶች ላይ ለማቀናበር ተገቢ እና ኃይለኛ።">Compact and powerful, ideal for small to mid-size farms.</p>
+                        <p><strong>450,000 ETB</strong></p>
+                        <button class="btn btn-success" onclick="alert('Mini Tractor added to cart!')">Order Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Two-Row Seeder -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm hover-effect text-center">
+                    <div class="card-body">
+                        <i class="fas fa-seedling fa-3x mb-3"></i>
+                        <h5 class="card-title" data-english="Two-Row Seeder" data-amharic="የእርሻ በለው መዘሪያ">Two-Row Seeder</h5>
+                        <p class="card-text" data-english="Plants seeds evenly, saving time and labor." data-amharic="ያማርኛ ተዘርዝሯል።">Plants seeds evenly, saving time and labor.</p>
+                        <p><strong>80,000 ETB</strong></p>
+                        <button class="btn btn-success" onclick="alert('Two-Row Seeder added to cart!')">Order Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Motorized Plow -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm hover-effect text-center">
+                    <div class="card-body">
+                        <i class="fas fa-shovel fa-3x mb-3"></i>
+                        <h5 class="card-title" data-english="Motorized Plow" data-amharic="የሞተር መቀነት መሳሪያ">Motorized Plow</h5>
+                        <p class="card-text" data-english="Fast and deep soil preparation without oxen." data-amharic="የተሟላ የመሬት ስራ እና ቀላል ስራ ነው።">Fast and deep soil preparation without oxen.</p>
+                        <p><strong>120,000 ETB</strong></p>
+                        <button class="btn btn-success" onclick="alert('Motorized Plow added to cart!')">Order Now</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Order Form Section -->
+    <section class="container mb-5">
+        <h2 class="text-center mb-4" id="order-form-title" data-english="Submit an Order" data-amharic="ትዕዛዝ ያቅርቡ">Submit an Order</h2>
+        <form id="orderForm" class="w-75 mx-auto">
+            <div class="mb-3">
+                <input type="text" class="form-control" placeholder="Your Full Name" required>
+            </div>
+            <div class="mb-3">
+                <input type="email" class="form-control" placeholder="Your Email" required>
+            </div>
+            <div class="mb-3">
+                <input type="tel" class="form-control" placeholder="Your Phone Number" required>
+            </div>
+            <div class="mb-3">
+                <select class="form-select" required>
+                    <option value="">Select a Product</option>
+                    <option>Mini Tractor</option>
+                    <option>Two-Row Seeder</option>
+                    <option>Motorized Plow</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Submit Order</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-4">
+        <p>&copy; 2025 AgerTech Ethiopia - All Rights Reserved</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        function switchLanguage(lang) {
+            const items = document.querySelectorAll('[data-english]');
+            items.forEach(element => {
+                element.innerText = element.getAttribute('data-' + lang);
+            });
+        }
+
+        document.getElementById('orderForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Thank you! Your order has been received.');
+        });
+    </script>
 
 </body>
+
 </html>
